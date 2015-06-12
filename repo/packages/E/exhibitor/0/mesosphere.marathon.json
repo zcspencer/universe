@@ -1,0 +1,30 @@
+{
+  "id": "cody-exhibitor-test5",
+  "cpus": 1,
+  "mem": 1024,
+  "instances": 3,
+  "constraints": [["hostname", "UNIQUE"]],
+  "ports": [31885, 31886, 31887, 31888],
+  "requirePorts": true,
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "build.mesosphere.com:5000/exhibitor",
+      "network": "HOST",
+      "forcePullImage": true
+    }
+  },
+  "healthChecks": [
+    {
+      "protocol": "HTTP",
+      "path": "/exhibitor/v1/cluster/state",
+      "gracePeriodSeconds": 120,
+      "intervalSeconds": 60,
+      "portIndex": 0,
+      "timeoutSeconds": 30,
+      "maxConsecutiveFailures": 3
+    }
+  ],
+  "cmd": "/exhibitor-wrapper -c zookeeper --headingtext cody-test-zk --zkconfigconnect srv2.hw.ca1.mesosphere.com:2181,srv3.hw.ca1.mesosphere.com:2181,srv4.hw.ca1.mesosphere.com:2181 --zkconfigzpath /cody-test/cody-zk-test5"
+}
+

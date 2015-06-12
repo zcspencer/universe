@@ -1,0 +1,85 @@
+{
+  "properties": {
+    "exhibitor": {
+      "additionalProperties": false,
+      "description": "Exhibitor specific configuration properties",
+      "properties": {
+        "app-id": {
+          "default": "/dcos-exhibitor",
+          "description": "Name of the Exhibitor task in Marathon",
+          "type": "string"
+        },
+        "cpus": {
+          "default": 0.1,
+          "description": "CPU shares to allocate to each Exhibitor instance.",
+          "minimum": 0.01,
+          "type": "number"
+        },
+        "http-port": {
+          "default": 31885,
+          "description": "The port on which the exhibitor UI listens.",
+          "minimum": 1,
+          "type": "integer"
+        },
+        "zookeper-client-port": {
+          "default": 31886,
+          "description": "The port clients use to talk to the zookeeper cluster.",
+          "minimum": 1,
+          "type": "integer"
+        },
+        "zookeper-peer-port": {
+          "default": 31887,
+          "description": "The port zookeper peers talk with eachother on.",
+          "minimum": 1,
+          "type": "integer"
+        },
+        "zookeeper-leader-port": {
+          "default": 3888,
+          "description": "The port zookeeper peers talk to the leader on.",
+          "minimum": 1,
+          "type": "integer"
+        },
+        "instances": {
+          "default": 3,
+          "description": "Number of Exhibitor instances to run.",
+          "minimum": 1,
+          "type": "integer"
+        },
+        "mem": {
+          "default": 1024.0,
+          "description": "Memory (MB) to allocate to each Exhibitor task.",
+          "minimum": 1024.0,
+          "type": "number"
+        },
+        "zk": {
+          "default": "master.mesos:2181",
+          "description": "Parent ZooKeeper URL for storing state. The framework name is joined to the path of this value. Format: zk://host1:port1,host2:port2,.../path",
+          "type": "string"
+        },
+        "docker-image": {
+          "default": "mesosphere/exhibitor-zookeeper-universe",
+          "description": "Docker image to run",
+          "type": "string"
+        }
+      },
+      "required": [
+        "app-id",
+        "cpus",
+        "http-port",
+        "zookeper-client-port",
+        "zookeper-peer-port",
+        "zookeeper-leader-port",
+        "instances",
+        "mem",
+        "zk",
+        "docker-image"
+      ],
+      "type": "object"
+    },
+  },
+  "required": [
+    "marathon",
+    "mesos"
+  ],
+  "type": "object"
+}
