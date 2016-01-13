@@ -2,7 +2,7 @@
   "assets": {
     "uris": {
       "cassandra-mesos-0-2-0-1-tar-gz":
-      "https://s3-us-west-2.amazonaws.com/cassandra-framework-dev/testing/cassandra-mesos-dev.tar.gz",
+      "https://s3-us-west-2.amazonaws.com/cassandra-framework-dev/mohit/cassandra-mesos-dev.tar.gz",
       "jre-7u76-linux-x64-tar-gz":    "https://downloads.mesosphere.com/java/jre-7u76-linux-x64.tar.gz"
     }
   },
