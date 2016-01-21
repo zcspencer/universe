@@ -13,7 +13,7 @@
   ],
   "healthChecks": [
     {
-      "gracePeriodSeconds": 120,
+      "gracePeriodSeconds": 30,
       "intervalSeconds": 15,
       "maxConsecutiveFailures": 0,
       "path": "/health/cluster",
@@ -70,5 +70,10 @@
 {{#cassandra.framework.authentication.secret}}
     ,"DEFAULT_SECRET": "{{cassandra.framework.authentication.secret}}"
 {{/cassandra.framework.authentication.secret}}
+    ,"CASSANDRA_RESERVATION": "true"
+    ,"CASSANDRA_PRINCIPAL": "cassandra-framework"
+    ,"CASSANDRA_DATA_DIRECTORY": "pv"
+    ,"CASSANDRA_FRAMEWORK_MESOS_ROLE": "role1"
+    ,"CASSANDRA_RESOURCE_CPU_CORES": "1"
   }
 }
