@@ -32,7 +32,7 @@
     }
   ],
   "labels": {
-    "DCOS_PACKAGE_FRAMEWORK_NAME": "cassandra.{{cassandra.cluster-name}}"
+    "DCOS_PACKAGE_FRAMEWORK_NAME": "{{cassandra.cluster-name}}"
   },
   "env": {
     "MESOS_ZK": "{{mesos.master}}"
