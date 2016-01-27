@@ -74,7 +74,7 @@
     ,"CASSANDRA_RESERVATION": "true"
     ,"CASSANDRA_PRINCIPAL": "cassandra-framework"
     ,"CASSANDRA_DATA_DIRECTORY": "pv"
-    ,"CASSANDRA_FRAMEWORK_MESOS_ROLE": "cassandra-framework"
+    ,"CASSANDRA_FRAMEWORK_MESOS_ROLE": "{{cassandra.role}}"
     ,"CASSANDRA_RESOURCE_CPU_CORES": "1"
   }
 }
