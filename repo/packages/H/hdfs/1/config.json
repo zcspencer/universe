@@ -18,6 +18,11 @@
         "type": "string",
         "default": "hdfs-mesos-0.1.9"
       },
+      "hdfs-version": {
+        "description": "HDFS version",
+        "type": "string",
+        "default": "0.2.5"
+      },
       "cpus": {
         "default": 0.5,
         "description": "CPU shares to allocate to each Marathon instance.",
