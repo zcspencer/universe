@@ -1,6 +1,6 @@
 # Mesosphere Universe [![Build Status](https://teamcity.mesosphere.io/guestAuth/app/rest/builds/buildType:(id:Oss_Universe_Ci)/statusIcon)](https://teamcity.mesosphere.io/viewType.html?buildTypeId=Oss_Universe_Ci&guest=1)
 
-The DCOS package repository for packages that have been certified by Mesosphere.
+The DCOS package repository for packages that have been certified by Mesosphere. For more information, see the [Service Requirements Specification](https://docs.mesosphere.com/dev-service/service-requirements-spec/).
 
 ## Installation
 
