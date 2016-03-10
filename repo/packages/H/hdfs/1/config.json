@@ -50,7 +50,12 @@
     	"role": {
       	"description": "Framework role",
       	"type": "string",
-      	"default": "*"
+      	"default": "hdfs-role"
+      },
+      "principal": {
+        "description": "principal",
+        "type": "string",
+        "default": "hdfs-principal"
       },
       "jre-version": {
         "description": "JRE version",
@@ -255,7 +260,19 @@
   	    "description": "The amount of heap memory for the executor.",
   	    "type": "number",
   	    "default": 256
-  	  }, "mesos-hdfs-log-level": {
+  	  }, "mesos-hdfs-namenode-disk":{
+          "description": "The amount of disk size for namenode",
+          "type": "number",
+          "default": 5000
+      }, "mesos-hdfs-datanode-disk":{
+          "description": "The amount of disk size for datanode",
+          "type": "number",
+          "default": 5000
+      }, "mesos-hdfs-journalnode-disk":{
+          "description": "The amount of disk size for journalnode",
+          "type": "number",
+          "default": 5000
+      }, "mesos-hdfs-log-level": {
   	    "description": "The log level.",
   	    "type": "string",
   	    "default": "INFO"

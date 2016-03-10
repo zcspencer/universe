@@ -68,7 +68,9 @@
 	"MESOS_HDFS_JRE_VERSION" : "{{hdfs.jre-version}}",
 	"MESOS_HDFS_JRE_URL" : "{{resource.assets.uris.jre-7u76-linux-x64-tar-gz}}",
 	"DFS_NAMENODE_DATANODE_REGISTRATION_IP__DASH__HOSTNAME__DASH__CHECK" : "{{hdfs.dfs-namenode-datanode-registration-ip-hostname-check}}",
-
+  "MESOS_HDFS_NAMENODE_DISK": "{{hdfs.mesos-hdfs-namenode-disk}}",
+  "MESOS_HDFS_DATANODE_DISK": "{{hdfs.mesos-hdfs-datanode-disk}}",
+  "MESOS_HDFS_JOURNALNODE_DISK": "{{hdfs.mesos-hdfs-journalnode-disk}}",
 	"DFS_HA_NAMENODES_HDFS" : "{{hdfs.dfs-ha-namenodes-hdfs}}"
   },
   "cmd": "export JAVA_HOME=$MESOS_DIRECTORY/{{hdfs.jre-version}} && cd {{hdfs.framework-version}} && ./bin/hdfs-mesos",
