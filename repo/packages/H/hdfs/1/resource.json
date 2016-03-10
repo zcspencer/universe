@@ -6,7 +6,7 @@
   },
   "assets": {
     "uris": {
-      "hdfs-mesos-scheduler": "https://s3-us-west-2.amazonaws.com/gabriel-hdfs-test/hdfs-mesos-0.1.9.tgz",
+      "hdfs-mesos-scheduler": "https://s3-us-west-2.amazonaws.com/hdfs-dev/mohit/hdfs-mesos-0.1.9.tgz",
       "jre-7u76-linux-x64-tar-gz": "https://downloads.mesosphere.com/java/jre-7u76-linux-x64.tar.gz"
     }
   }
