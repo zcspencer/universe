@@ -1,5 +1,5 @@
 {
   "pip": [
-    "https://s3.amazonaws.com/downloads.mesosphere.io/dcos/spark/dcos_spark-0.4.0_spark_1.5.0_multi_roles_v2_bin_2.4.0-py2.py3-none-any.whl"
+      "git+ssh://git@github.com/mesosphere/dcos-spark.git@13371a879c2c738aeebd44758132a1c887fd56f5"
   ]
 }
