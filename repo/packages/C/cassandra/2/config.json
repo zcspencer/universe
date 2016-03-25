@@ -60,6 +60,11 @@
           "type": "integer",
           "default": 10240
         },
+        "diskType": {
+          "id": "http://cassandra/docs/mesosphere.com/cassandra/diskType",
+          "type": "string",
+          "default": "ROOT"
+        },
         "heap": {
           "id": "http://cassandra/docs/mesosphere.com/cassandra/heap",
           "type": "object",
