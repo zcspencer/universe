@@ -68,6 +68,10 @@
           "count":{
             "type":"number",
             "default":3
+          },
+          "diskType":{
+            "type":"string",
+            "default":"ROOT"
           }
         },
         "required":[
