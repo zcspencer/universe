@@ -3,7 +3,7 @@
   "cpus": 1.0,
   "mem": 1230,
   "instances": 1,
-  "cmd": "export PATH=$PATH:$MESOS_SANDBOX/jre/bin && ./kafka-scheduler*/bin/kafka-scheduler server ./kafka-scheduler*/conf/scheduler.yml",
+  "cmd": "export PATH=$PATH:$MESOS_SANDBOX/jre/bin && ./scheduler/bin/kafka-scheduler server ./scheduler/conf/scheduler.yml",
   "env": {
     "LD_LIBRARY_PATH": "/opt/mesosphere/lib",
     "FRAMEWORK_NAME": "{{service.name}}",
@@ -107,7 +107,7 @@
   },
   "uris": [
     "{{resource.assets.uris.jre-tar-gz}}",
-    "{{resource.assets.uris.kafka-scheduler-jar}}",
+    "{{resource.assets.uris.scheduler-zip}}",
     "{{resource.assets.uris.kafka_tgz}}"
   ],
   "healthChecks": [

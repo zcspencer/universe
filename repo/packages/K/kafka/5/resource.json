@@ -3,7 +3,7 @@
     "uris": {
       "jre-tar-gz": "https://s3-eu-west-1.amazonaws.com/downloads.mesosphere.com/kafka/jre-8u72-linux-x64.tar.gz",
       "kafka_tgz": "https://s3-eu-west-1.amazonaws.com/downloads.mesosphere.com/kafka/kafka_2.10-0.9.0.1.tgz",
-      "kafka-scheduler-jar": "https://s3-us-west-2.amazonaws.com/kafka-dev-bucket/mohit/kafka-scheduler-0.2.4.zip",
+      "scheduler-zip": "https://s3-us-west-2.amazonaws.com/kafka-dev-bucket/mohit/scheduler.zip",
       "kafka-config-overrider-jar": "https://s3-us-west-2.amazonaws.com/kafka-dev-bucket/mohit/kafka-config-overrider-0.2.4-uber.jar",
       "container-hook-tgz": "https://s3-eu-west-1.amazonaws.com/downloads.mesosphere.com/kafka/0_9_0_1__0_2_4/container-hook-0.2.4.tgz"
     }
