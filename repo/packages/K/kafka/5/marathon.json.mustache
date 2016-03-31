@@ -4,6 +4,9 @@
   "mem": 1230,
   "instances": 1,
   "cmd": "export PATH=$PATH:$MESOS_SANDBOX/jre/bin && java -Xmx1024m -jar kafka-scheduler*.jar",
+  "labels": {
+    "DCOS_PACKAGE_FRAMEWORK_NAME": "{{service.name}}"
+  },
   "env": {
     "LD_LIBRARY_PATH": "/opt/mesosphere/lib",
     "FRAMEWORK_NAME": "{{service.name}}",
