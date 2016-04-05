@@ -1,0 +1,74 @@
+{
+    "id": "{{marathon.id}}",
+    "cpus": {{marathon.cpus}},
+    "mem": {{marathon.mem}},
+    "cmd": "/sbin/init.sh",
+    "env": {
+        "SPARK_USER": "{{dispatcher.user}}",
+        "SPARK_DISPATCHER_FRAMEWORK_NAME": "{{marathon.id}}",
+        "SPARK_DISPATCHER_MESOS_ROLE": "{{dispatcher.role}}",
+{{#spark.kerberos.krb5conf}}
+        "SPARK_MESOS_KRB5_CONF_BASE64": "{{dispatcher.kerberos.krb5conf}}",
+{{/spark.kerberos.krb5conf}}
+{{#spark.ssl.enabled}}
+        "SPARK_SSL_ENABLED": "{{ssl.enabled}}",
+        "SPARK_SSL_KEYSTOREBASE64": "{{ssl.keyStoreBase64}}",
+        "SPARK_SSL_TRUSTSTOREBASE64": "{{ssl.trustStoreBase64}}",
+        "SPARK_SSL_KEYSTOREPASSWORD": "{{ssl.keyStorePassword}}",
+        "SPARK_SSL_KEYPASSWORD": "{{ssl.keyPassword}}",
+        "SPARK_SSL_TRUSTSTOREPASSWORD": "{{ssl.keyStorePassword}}",
+        "SPARK_SSL_PROTOCOL": "{{ssl.protocol}}",
+        "SPARK_SSL_ENABLEDALGORITHMS": "{{ssl.enabledAlgorithms}}",
+{{/spark.ssl.enabled}}
+        "ENABLE_HISTORY_SERVER": "{{history-server.enabled}}",
+        "HISTORY_LOG_DIR": "{{history-server.log-dir}}",
+        "HISTORY_CLEANER_ENABLED": "{{history-server.cleaner-enabled}}",
+        "HISTORY_CLEANER_INTERVAL": "{{history-server.cleaner-interval}}",
+        "HISTORY_CLEANER_MAXAGE": "{{history-server.cleaner-maxage}}"
+    },
+    "ports": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "container": {
+        "type": "DOCKER",
+        "docker": {
+            "image": "{{resource.assets.container.docker.spark_docker}}",
+            "network": "HOST",
+            "forcePullImage": true
+        }
+    },
+    "healthChecks": [
+        {
+{{#spark.ssl.enabled}}
+            "protocol": "COMMAND",
+            "command": { "value": "curl -f -k https://$HOST:$PORT3/" },
+{{/spark.ssl.enabled}}
+{{^spark.ssl.enabled}}
+            "path": "/",
+            "portIndex": 3,
+            "protocol": "HTTP",
+{{/spark.ssl.enabled}}
+            "gracePeriodSeconds": 5,
+            "intervalSeconds": 60,
+            "timeoutSeconds": 10,
+            "maxConsecutiveFailures": 3
+        }
+    ],
+    "labels": {
+{{#hdfs.config-url}}
+        "SPARK_HDFS_CONFIG_URL": "{{hdfs.config-url}}",
+{{/hdfs.config-url}}
+        "SPARK_URI": "{{dispatcher.spark-dist-uri}}",
+        "DCOS_SERVICE_NAME": "{{marathon.id}}",
+        "DCOS_SERVICE_PORT_INDEX": "4",
+{{#spark.ssl.enabled}}
+        "DCOS_SERVICE_SCHEME": "https"
+{{/spark.ssl.enabled}}
+{{^spark.ssl.enabled}}
+        "DCOS_SERVICE_SCHEME": "http"
+{{/spark.ssl.enabled}}
+    }
+}
