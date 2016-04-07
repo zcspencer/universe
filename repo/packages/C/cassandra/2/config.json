@@ -88,7 +88,7 @@
 					"id": "http://cassandra/docs/mesosphere.com/node/mem",
 					"type": "integer",
 					"description": "The amount of memory, in MB, allocated to the Cassandra process.",
-					"default": 1536
+					"default": 1024
 				},
 				"disk": {
 					"id": "http://cassandra/docs/mesosphere.com/node/disk",
@@ -105,7 +105,7 @@
 							"id": "http://cassandra/docs/mesosphere.com/node/heap/size",
 							"type": "integer",
 							"description": "The amount of JVM heap, in MB, allocated to the Cassandra process.",
-							"default": 1024
+							"default": 682
 						},
 						"new": {
 							"id": "http://cassandra/docs/mesosphere.com/node/heap/new",
