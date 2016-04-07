@@ -88,13 +88,13 @@
 					"id": "http://cassandra/docs/mesosphere.com/node/mem",
 					"type": "integer",
 					"description": "The amount of memory, in MB, allocated to the Cassandra process.",
-					"default": 4096
+					"default": 1536
 				},
 				"disk": {
 					"id": "http://cassandra/docs/mesosphere.com/node/disk",
 					"type": "integer",
 					"description": "The amount of disk, in MB, allocated to the Cassandra process.",
-					"default": 10240
+					"default": 2500
 				},
 				"heap": {
 					"id": "http://cassandra/docs/mesosphere.com/node/heap",
@@ -105,7 +105,7 @@
 							"id": "http://cassandra/docs/mesosphere.com/node/heap/size",
 							"type": "integer",
 							"description": "The amount of JVM heap, in MB, allocated to the Cassandra process.",
-							"default": 2048
+							"default": 1024
 						},
 						"new": {
 							"id": "http://cassandra/docs/mesosphere.com/node/heap/new",
@@ -125,19 +125,19 @@
 					"id": "http://cassandra/docs/mesosphere.com/node/volume_size",
 					"type": "integer",
 					"description": "The size of the persistent volume, in MB, allocated to the Cassandra process.",
-					"default": 9216
+					"default": 2000
 				},
 				"count": {
 					"id": "http://cassandra/docs/mesosphere.com/node/count",
 					"type": "integer",
 					"description": "The number of Cassandra nodes in the cluster.",
-					"default": 3
+					"default": 1
 				},
 				"seeds": {
 					"id": "http://cassandra/docs/mesosphere.com/node/seeds",
 					"type": "integer",
 					"description": "The number of Cassandra seed nodes in the cluster",
-					"default": 2
+					"default": 1
 				}
 			},
 			"additionalProperties": false,
