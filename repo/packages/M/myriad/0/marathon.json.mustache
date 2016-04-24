@@ -1,6 +1,6 @@
 {
   "id": "myriad",
-  "cmd": "export JAVA_HOME=$MESOS_DIRECTORY/jre && env && ./hadoop-2.7.1/bin/yarn resourcemanager",
+  "cmd": "until nslookup myriad.marathon.mesos; do echo "Cannot resolve myriad.marathon.mesos yet. Trying again..."; sleep 2; done && export JAVA_HOME=$MESOS_DIRECTORY/jre && env && ./hadoop-2.7.1/bin/yarn resourcemanager",
   "instances": 1,
   "cpus": 1,
   "mem": 2048,
