@@ -1,18 +1,22 @@
 {
-  "$schema": "http://json-schema.org/schema#",
+  "type": "object",
   "properties": {
     "myriad": {
+      "description": "Myriad framework configuration properties",
+      "type": "object",
       "properties": {
-        "instances": {
-          "default": 1,
-          "description": "Number of instances to run.",
-          "minimum": 1,
-          "type": "integer"
+        "framework-name": {
+          "description": "The framework name to register with Mesos.",
+          "type": "string",
+          "default": "myriad"
         }
       },
-      "required": ["instances"],
-      "type": "object"
+      "required": [
+        "framework-name"
+      ]
     }
   },
-  "type": "object"
+  "required": [
+    "myriad"
+  ]
 }
