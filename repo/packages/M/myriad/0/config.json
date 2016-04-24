@@ -1,10 +1,18 @@
 {
-	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "http://myriad/docs/mesosphere.com",
-	"type": "object",
-	"properties": {
-	},
-	"additionalProperties": false,
-	"required": [
-	]
+  "$schema": "http://json-schema.org/schema#",
+  "properties": {
+    "myriad": {
+      "properties": {
+        "instances": {
+          "default": 1,
+          "description": "Number of instances to run.",
+          "minimum": 1,
+          "type": "integer"
+        }
+      },
+      "required": ["instances"],
+      "type": "object"
+    }
+  },
+  "type": "object"
 }
