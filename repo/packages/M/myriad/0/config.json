@@ -1,0 +1,10 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "http://myriad/docs/mesosphere.com",
+	"type": "object",
+	"properties": {
+	},
+	"additionalProperties": false,
+	"required": [
+	]
+}

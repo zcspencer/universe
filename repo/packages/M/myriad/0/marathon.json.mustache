@@ -1,0 +1,20 @@
+{
+  "id": "/myriad",
+  "cmd": "cd hadoop-2.7.1/sbin && yarn-daemon.sh start resourcemanager",
+  "instances": 1,
+  "cpus": 1,
+  "mem": 2048,
+  "requirePorts": true,
+  "ports": [
+    8080
+  ],
+  "uris": [
+    "https://s3-us-west-2.amazonaws.com/myriad-dev/universe/hadoop-2.7.1-rm.tar.xz"
+  ],
+  "labels": {
+    "DCOS_PACKAGE_FRAMEWORK_NAME": "myriad"
+  },
+  "env":{
+    "YARN_RESOURCEMANAGER_OPTS":"-Dyarn.resourcemanager.hostname=myriad.marathon.mesos"
+  }
+}
