@@ -329,7 +329,7 @@
       "description":"Apache Myriad running on DCOS",
       "framework":true,
       "name":"myriad",
-      "selected":false,
+      "selected":true,
       "tags":[
         "hadoop",
         "yarn",
