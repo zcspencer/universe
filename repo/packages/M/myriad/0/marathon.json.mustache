@@ -9,12 +9,14 @@
     0
   ],
   "uris": [
-    "https://s3-us-west-2.amazonaws.com/myriad-dev/universe/hadoop-2.7.1-rm.tar.xz"
+    "https://s3-us-west-2.amazonaws.com/myriad-dev/universe/hadoop-2.7.1-rm.tar.xz",
+    "https://s3.amazonaws.com/downloads.mesosphere.io/cassandra/assets/1.0.1-2.2.5/server-jre-8u74-linux-x64.tar.gz"
   ],
   "labels": {
     "DCOS_PACKAGE_FRAMEWORK_NAME": "myriad"
   },
   "env":{
-    "YARN_RESOURCEMANAGER_OPTS":"-Dyarn.resourcemanager.hostname=myriad.marathon.mesos"
+    "JAVA_HOME":"./jre"
+    ,"YARN_RESOURCEMANAGER_OPTS":"-Dyarn.resourcemanager.hostname=myriad.marathon.mesos"
   }
 }
