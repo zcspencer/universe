@@ -11,7 +11,7 @@
     "url" : "https://github.com/mesosphere/marathon/blob/master/LICENSE"
   } ],
   "tags" : [ "hadoop", "yarn", "myriad" ],
-  "preInstallNotes" : "You are about the DCOS Apache Myriad service.",
+  "preInstallNotes" : "You are about to install the DC/OS Apache Myriad service.",
   "postInstallNotes" : "Your Myriad cluster is being deployed.",
   "postUninstallNotes" : "Your Myriad cluster has been uninstalled. Please run the framework_cleaner to remove any persistent state if required.",
   "selected" : true
