@@ -23,6 +23,18 @@
       }
     }
   ],
+  "healthChecks": [
+    {
+      "path": "/api/config",
+      "protocol": "HTTP",
+      "portIndex": 0,
+      "gracePeriodSeconds": 300,
+      "intervalSeconds": 60,
+      "timeoutSeconds": 20,
+      "maxConsecutiveFailures": 3,
+      "ignoreHttp1xx": false
+    }
+  ],
   "uris": [
     "https://s3-us-west-2.amazonaws.com/myriad-dev/universe/hadoop-2.7.1-rm.tar.xz",
     "https://downloads.mesosphere.com/java/jre-7u76-linux-x64.tar.gz"
