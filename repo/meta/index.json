@@ -119,6 +119,21 @@
     },
     {
       "currentVersion":"0.0.1",
+      "description":"confluent-rest-proxy package",
+      "framework":false,
+      "name":"confluent-rest-proxy",
+      "selected":false,
+      "tags":[
+        "kafka",
+        "proxy",
+        "rest"
+      ],
+      "versions":{
+        "0.0.1":"0"
+      }
+    },
+    {
+      "currentVersion":"0.0.1",
       "description":"confluent-schema-registry package",
       "framework":false,
       "name":"confluent-schema-registry",

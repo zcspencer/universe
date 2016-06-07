@@ -1,0 +1,18 @@
+{
+  "packagingVersion": "2.0",
+  "name": "confluent-rest-proxy",
+  "version": "0.0.1",
+  "scm": "https://github.com/confluentinc/kafka-rest",
+  "description": "confluent-rest-proxy package",
+  "maintainer": "support@confluent.io",
+  "tags": ["kafka", "proxy", "rest"],
+  "preInstallNotes": "Preparing to install confluent-rest-proxy",
+  "postInstallNotes": "confluent-rest-proxy has been installed.",
+  "postUninstallNotes": "confluent-rest-proxy was uninstalled successfully.",
+  "licenses": [
+    {
+      "name": "Apache License v2",
+      "url": "https://raw.githubusercontent.com/confluentinc/schema-registry/master/LICENSE"
+    }
+  ]
+}

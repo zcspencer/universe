@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "properties": {
+    "proxy": {
+      "properties": {
+        "instances": {
+          "default": 1,
+          "description": "Number of instances to run.",
+          "minimum": 1,
+          "type": "integer"
+        },
+        "cpus": {
+          "default": 1,
+          "description": "CPU shares to allocate to each schema-registry instance.",
+          "minimum": 1,
+          "type": "number"
+        },
+        "mem": {
+          "default": 1024.0,
+          "description": "Memory (MB) to allocate to each schema-registry task.",
+          "minimum": 256.0,
+          "type": "number"
+        },
+        "name": {
+          "default": "rest-proxy",
+          "description": "Name for this schema-registry application",
+          "type": "string"
+        },
+        "role": {
+          "default": "*",
+          "description": "Deploy schema-registry only on nodes with this role.",
+          "type": "string"
+        },
+        "zk": {
+          "default": "leader.mesos:2181/kafka",
+          "description": "Format <zk-host>:<zkport>/<znode>",
+          "type": "string"
+        },
+        "registry": {
+          "description": "Connection URL for registry",
+          "type": "string"
+        }
+      },
+      "required": ["cpus", "mem", "instances", "name", "registry"],
+      "type": "object"
+    }
+  },
+  "type": "object"
+}
