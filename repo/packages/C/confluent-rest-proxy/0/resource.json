@@ -2,7 +2,7 @@
   "assets": {
     "container": {
       "docker": {
-        "registry-docker": "confluent/rest-proxy:3.0.0"
+        "proxy-docker": "confluent/rest-proxy:3.0.0"
       }
     }
   },
