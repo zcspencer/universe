@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "properties": {
+    "registry": {
+      "properties": {
+        "instances": {
+          "default": 1,
+          "description": "Number of instances to run.",
+          "minimum": 1,
+          "type": "integer"
+        },
+        "cpus": {
+          "default": 1,
+          "description": "CPU shares to allocate to each schema-registry instance.",
+          "minimum": 1,
+          "type": "number"
+        },
+        "mem": {
+          "default": 1024.0,
+          "description": "Memory (MB) to allocate to each schema-registry task.",
+          "minimum": 256.0,
+          "type": "number"
+        },
+        "name": {
+          "default": "schema-registry",
+          "description": "Name for this schema-registry application",
+          "type": "string"
+        },
+        "role": {
+          "default": "*",
+          "description": "Deploy schema-registry only on nodes with this role.",
+          "type": "string"
+        }
+      },
+      "required": ["cpus", "mem", "instances", "name"],
+      "type": "object"
+    }
+  },
+  "type": "object"
+}

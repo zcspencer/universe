@@ -118,6 +118,20 @@
       }
     },
     {
+      "currentVersion":"0.0.1",
+      "description":"confluent-schema-registry package",
+      "framework":false,
+      "name":"confluent-schema-registry",
+      "selected":false,
+      "tags":[
+        "kafka",
+        "registry"
+      ],
+      "versions":{
+        "0.0.1":"0"
+      }
+    },
+    {
       "currentVersion":"0.1.0",
       "description":"A Mesos Framework that allows running and resizing one or multiple Crate database clusters.",
       "framework":true,
