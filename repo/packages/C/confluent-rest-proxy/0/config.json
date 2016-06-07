@@ -37,6 +37,7 @@
           "type": "string"
         },
         "registry": {
+          "default": "http://schema-registry:8081",
           "description": "Connection URL for registry",
           "type": "string"
         }
