@@ -30,6 +30,11 @@
           "default": "*",
           "description": "Deploy schema-registry only on nodes with this role.",
           "type": "string"
+        },
+        "kafkastore-connection-url": {
+          "default": "leader.mesos:2181/confluent",
+          "description": "Connection URL for Kafka.",
+          "type": "string"
         }
       },
       "required": ["cpus", "mem", "instances", "name"],
