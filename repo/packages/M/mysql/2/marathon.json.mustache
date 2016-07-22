@@ -19,14 +19,17 @@
         "docker": {
             "image": "{{resource.assets.container.docker.mysql-docker}}",
             "forcePullImage": true,
+            {{#service.bridge}}
             "network": "BRIDGE",
-            "portMappings": [
-            {
+            "portMappings": [{
                 "containerPort": 3306,
                 "hostPort": 0,
                 "protocol": "tcp"
-            }
-            ]
+            }]
+            {{/service.bridge}}
+            {{^service.bridge}}
+            "network": "HOST"
+            {{/service.bridge}}
         },
         "volumes": [
         {
