@@ -5,7 +5,7 @@
     "instances": {{mysql.instances}},
     "env": {
         {{#mysql.database.name}}
-        "MYSQL_DATABASE": "{{mysql.database}}",
+        "MYSQL_DATABASE": "{{mysql.database.name}}",
         {{#mysql.database.username}}
         "MYSQL_USER": "{{mysql.database.username}}",
         "MYSQL_PASSWORD": "{{mysql.database.password}}",
