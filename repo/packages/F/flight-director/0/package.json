@@ -1,0 +1,13 @@
+{
+  "packagingVersion": "3.0",
+  "name": "flight-director",
+  "version": "0.1",
+  "scm": "https://github.com/adobe-platform/flight-director",
+  "maintainer": "jomeacha@adobe.com",
+  "website": "https://github.com/adobe-platform",
+  "tags": ["ethos", "continuous-integration", "ci"],
+  "description": "Ethos platform API for container deployments",
+  "framework": false,
+  "postInstallNotes": "Remember to register your cluster with OrCA!",
+  "minDcosReleaseVersion": "1.7"
+}

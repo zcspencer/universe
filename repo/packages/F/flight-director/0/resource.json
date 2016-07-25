@@ -1,0 +1,14 @@
+{
+  "images": {
+    "icon-small": "https://dcos-private-universe.s3.amazonaws.com/assets/flight-director/icon-service-flight-director-small.png",
+    "icon-medium": "https://dcos-private-universe.s3.amazonaws.com/assets/flight-director/icon-service-flight-director-medium.png",
+    "icon-large": "https://dcos-private-universe.s3.amazonaws.com/assets/flight-director/icon-service-flight-director-large.png"
+  },
+  "assets": {
+    "container": {
+      "docker": {
+        "4fd45e0f4398": "jonmeacham/flight-director:latest"
+      }
+    }
+  }
+}

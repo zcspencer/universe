@@ -1,0 +1,64 @@
+{
+  "properties": {
+    "flight-director": {
+      "description": "Flight Director configuration properties",
+      "properties": {
+        "fd-api-server-port": {
+          "default": "2001",
+          "description": "Flight Director API listener port",
+          "type": "integer",
+        },
+        "fd-log-marathon-api-calls": {
+          "default": true,
+          "description": "Enable or disable verbose logging of Marathon API calls",
+          "type": "boolean"
+        },
+        "fd-db-engine": {
+          "default": "sqlite3",
+          "description": "Database engine for Flight Director persistence",
+          "type": "string"
+        },
+        "fd-db-path": {
+          "default": "./fd.db",
+          "description": "Flight Director database path",
+          "type": "string"
+        },
+        "fd-db-username": {
+          "description": "Flight Director MySQL database user",
+          "type": "string"
+        },
+        "fd-db-password": {
+          "description": "Flight Director MySQL database password",
+          "type": "string"
+        },
+        "fd-db-database": {
+          "description": "Flight Director MySQL database name",
+          "type": "string"
+        },
+        "fd-dockercfg-location": {
+          "default": "file:///root/.dockercfg",
+          "description": ".dockercfg location on Mesos agent nodes",
+          "type": "string"
+        },
+        "fd-drain-container-time": {
+          "default": "600",
+          "description": "Time (in seconds) to wait before killing old containers",
+          "type": "integer"
+        },
+        "fd-marathon-master-protocol": {
+          "default": "http",
+          "description": "Selection of HTTP or HTTPS for Marathon Master communication",
+          "type": "string"
+        },
+        "fd-marathon-master": {
+          "default": "marathon.mesos:8080",
+          "description": "Marathon master URI",
+          "type": "string"
+        },
+        "fd-chronos-master-protocol": {
+          "default": "chronos.marathon.mesos:"
+        }
+      }
+    }
+  }
+}
