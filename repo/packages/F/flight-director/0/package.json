@@ -9,6 +9,6 @@
   "description": "Ethos platform API for container deployments",
   "framework": false,
   "postInstallNotes": "Flight Director has been installed. Remember to register your cluster with OrCA!",
-  "portUninstallNotes": "Flight Director has been uninstalled."
+  "portUninstallNotes": "Flight Director has been uninstalled.",
   "minDcosReleaseVersion": "1.7"
 }
