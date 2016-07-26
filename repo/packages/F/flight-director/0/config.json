@@ -66,7 +66,7 @@
         "fd-drain-container-time": {
           "description": "Time (in seconds) to wait before killing old containers",
           "type": "integer",
-          "default": 600,
+          "default": 600
         },
         "fd-marathon-master-protocol": {
           "description": "Selection of HTTP or HTTPS for Marathon master communication",
@@ -95,7 +95,7 @@
         },
         "fd-chronos-master-port": {
           "description": "Chronos master port",
-          "type": "integer",
+          "type": "integer"
         },
         "fd-mesos-master-protocol": {
           "description": "Selection of HTTP or HTTPS for Mesos master communication",
@@ -130,7 +130,7 @@
         },
         "fd-kv-server-port": {
           "description": "etcd port",
-          "type": "integer",
+          "type": "integer"
         },
         "fd-kv-username": {
           "description": "Username for authenticated etcd API access",
