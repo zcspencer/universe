@@ -4,9 +4,9 @@
   "framework": false,
   "maintainer": "jomeacha@adobe.com",
   "name": "flight-director",
-  "postInstallNotes": "Flight Director has been installed. Remember to register your cluster with OrCA.",
-  "portUninstallNotes": "Flight Director has been uninstalled.",
-  "scm": "https://github.com/adobe-platform/flight-director.git",
+  "postInstallNotes": "Flight Director has been installed",
+  "postUninstallNotes": "Flight Director has been uninstalled",
+  "scm": "https://github.com/adobe-platform/flight-director",
   "tags": [
     "ethos",
     "flight-director",
@@ -14,5 +14,7 @@
     "cd"
   ],
   "version": "0.1",
-  "website": "https://github.com/adobe-platform"
+  "website": "https://github.com/adobe-platform",
+  "selected": true,
+  "minDcosReleaseVersion": "1.7"
 }
