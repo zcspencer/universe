@@ -4,7 +4,7 @@
   "framework": false,
   "maintainer": "jomeacha@adobe.com",
   "name": "flight-director",
-  "postInstallNotes": "Flight Director has been installed. Remember to register your cluster with OrCA!",
+  "postInstallNotes": "Flight Director has been installed. Remember to register your cluster with OrCA.",
   "portUninstallNotes": "Flight Director has been uninstalled.",
   "scm": "https://github.com/adobe-platform/flight-director.git",
   "tags": [
