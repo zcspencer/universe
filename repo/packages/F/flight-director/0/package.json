@@ -2,12 +2,13 @@
   "packagingVersion": "3.0",
   "name": "flight-director",
   "version": "0.1",
-  "scm": "https://github.com/adobe-platform/flight-director",
+  "scm": "https://github.com/adobe-platform/flight-director.git",
   "maintainer": "jomeacha@adobe.com",
   "website": "https://github.com/adobe-platform",
-  "tags": ["ethos", "continuous-integration", "ci"],
+  "tags": ["ethos", "flight-director", "continuous-deployment", "cd"],
   "description": "Ethos platform API for container deployments",
   "framework": false,
-  "postInstallNotes": "Remember to register your cluster with OrCA!",
+  "postInstallNotes": "Flight Director has been installed. Remember to register your cluster with OrCA!",
+  "portUninstallNotes": "Flight Director has been uninstalled."
   "minDcosReleaseVersion": "1.7"
 }

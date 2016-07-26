@@ -1,27 +1,50 @@
 {
   "properties": {
+    "service": {
+      "description": "Configuration properties for the DC/OS Flight Director service",
+      "type": "object",
+      "properties": {
+        "name": {
+            "description": "Display name for the service on the DC/OS dashboard",
+            "type": "string",
+            "default": "flight-director"
+        },
+        "cpus": {
+            "description": "CPU allocation for the Flight Director instance",
+            "type": "number",
+            "default": 1.0,
+            "minimum": 0.1
+        },
+        "mem": {
+            "description": "Memory (MB) allocation for the Flight Director instance",
+            "type": "number",
+            "default": 2048.0,
+            "minimum": 2048.0
+        }
+      }
+    },
     "flight-director": {
-      "description": "Flight Director configuration properties",
+      "description": "Configuration properties for the Flight Director application",
       "properties": {
         "fd-api-server-port": {
-          "default": "2001",
           "description": "Flight Director API listener port",
           "type": "integer",
+          "default": "2001"
         },
         "fd-log-marathon-api-calls": {
-          "default": true,
           "description": "Enable or disable verbose logging of Marathon API calls",
-          "type": "boolean"
+          "type": "boolean",
+          "default": true
         },
         "fd-db-engine": {
-          "default": "sqlite3",
           "description": "Database engine for Flight Director persistence",
-          "type": "string"
+          "type": "string",
+          "default": "sqlite3"
         },
         "fd-db-path": {
-          "default": "./fd.db",
           "description": "Flight Director database path",
-          "type": "string"
+          "type": "string",
+          "default": "./fd.db"
         },
         "fd-db-username": {
           "description": "Flight Director MySQL database user",
@@ -36,27 +59,116 @@
           "type": "string"
         },
         "fd-dockercfg-location": {
-          "default": "file:///root/.dockercfg",
           "description": ".dockercfg location on Mesos agent nodes",
-          "type": "string"
+          "type": "string",
+          "default": ""
         },
         "fd-drain-container-time": {
-          "default": "600",
           "description": "Time (in seconds) to wait before killing old containers",
-          "type": "integer"
+          "type": "integer",
+          "default": 600,
         },
         "fd-marathon-master-protocol": {
-          "default": "http",
-          "description": "Selection of HTTP or HTTPS for Marathon Master communication",
-          "type": "string"
+          "description": "Selection of HTTP or HTTPS for Marathon master communication",
+          "type": "string",
+          "default": "http"
         },
         "fd-marathon-master": {
-          "default": "marathon.mesos:8080",
           "description": "Marathon master URI",
-          "type": "string"
+          "type": "string",
+          "default": "marathon.mesos:8080"
         },
         "fd-chronos-master-protocol": {
-          "default": "chronos.marathon.mesos:"
+          "description": "Selection of HTTP or HTTPS for Chronos master communication",
+          "type": "string",
+          "default": "http"
+        },
+        "fd-chronos-master": {
+          "description": "Chronos master URI",
+          "type": "string",
+          "default": "chronos.marathon.mesos:????"
+        },
+        "fd-mesos-master-protocol": {
+          "description": "Selection of HTTP or HTTPS for Mesos master communication",
+          "type": "string",
+          "default": "http"
+        },
+        "fd-mesos-master": {
+          "description": "Mesos master URI",
+          "type": "string",
+          "default": "zk://leader.mesos:2181/mesos"
+        },
+        "fd-marathon-user": {
+          "description": "Username for authenticated Marathon API access",
+          "type": "string"
+        },
+        "fd-marathon-password": {
+          "description": "Password for authenticated Marathon API access",
+          "type": "string"
+        },
+        "fd-event-interface": {
+          "description": "Network interface binding for event listener?",
+          "type": "string"
+        },
+        "fd-event-port": {
+          "description": "Port binding for event listener?",
+          "type": "string"
+        },
+        "fd-kv-server": {
+          "description": "etcd URI",
+          "type": "string",
+          "default": "etcd.marathon.mesos:????"
+        },
+        "fd-kv-username": {
+          "description": "Username for authenticated etcd API access",
+          "type": "string"
+        },
+        "fd-kv-password": {
+          "description": "Password for authenticated etcd API access",
+          "type": "string"
+        },
+        "fd-fixtures": {
+          "description": "Optional preload of demo data into Flight Director database",
+          "type": "string",
+          "default": "demo"
+        },
+        "fd-debug": {
+          "description": "Toggle Flight Director debug output",
+          "type": "boolean",
+          "default": true
+        },
+        "authorizer-type": {
+          "description": "Authentication provider for Flight Director v2 API resources",
+          "type": "string",
+          "default": "none"
+        },
+        "fd-allow-marathon-unverified-tls": {
+          "description": "Allow Marathon API calls with invalid SSL configuration",
+          "type": "boolean",
+          "default": false
+        },
+        "fd-proxy-port-range": {
+          "description": "Port range for auto-assignment of Image proxy port mappings",
+          "type": "string",
+          "default": "41000:42000"
+        },
+        "fd-iamrole-label": {
+          "description": "Docker label name for use with IAMRole proxy",
+          "type": "string"
+        },
+        "fd-airlock-public-key": {
+          "description": "Public key for decryption of Airlock JSON web tokens",
+          "type": "string"
+        }
+      }
+    },
+    "advanced": {
+      "description": "Advanced configuration parameters for Flight Director",
+      "type": "object",
+      "properties": {
+        "docker-image": {
+          "description": "Custom Docker image for Flight Director deployment. Replaces the default jonmeacham/flight-director image.",
+          "type": "string"
         }
       }
     }
