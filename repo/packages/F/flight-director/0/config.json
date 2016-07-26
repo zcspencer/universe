@@ -73,20 +73,29 @@
           "type": "string",
           "default": "http"
         },
-        "fd-marathon-master": {
-          "description": "Marathon master URI",
+        "fd-marathon-master-host": {
+          "description": "Marathon master host",
           "type": "string",
-          "default": "marathon.mesos:8080"
+          "default": "marathon.mesos"
+        },
+        "fd-marathon-master-port": {
+          "description": "Marathon port",
+          "type": "integer",
+          "default": 8080
         },
         "fd-chronos-master-protocol": {
           "description": "Selection of HTTP or HTTPS for Chronos master communication",
           "type": "string",
           "default": "http"
         },
-        "fd-chronos-master": {
-          "description": "Chronos master URI",
+        "fd-chronos-master-host": {
+          "description": "Chronos master hostname",
           "type": "string",
-          "default": "chronos.marathon.mesos:????"
+          "default": "chronos.marathon.mesos"
+        },
+        "fd-chronos-master-port": {
+          "description": "Chronos master port",
+          "type": "integer",
         },
         "fd-mesos-master-protocol": {
           "description": "Selection of HTTP or HTTPS for Mesos master communication",
@@ -114,10 +123,14 @@
           "description": "Port binding for event listener?",
           "type": "string"
         },
-        "fd-kv-server": {
-          "description": "etcd URI",
+        "fd-kv-server-host": {
+          "description": "etcd hostname",
           "type": "string",
-          "default": "etcd.marathon.mesos:????"
+          "default": "etcd.marathon.mesos"
+        },
+        "fd-kv-server-port": {
+          "description": "etcd port",
+          "type": "integer",
         },
         "fd-kv-username": {
           "description": "Username for authenticated etcd API access",
