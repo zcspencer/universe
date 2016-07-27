@@ -7,7 +7,7 @@
   "assets": {
     "container": {
       "docker": {
-        "4fd45e0f4398": "jonmeacham/flight-director:0.1"
+        "4fd45e0f4398": "jonmeacham/flight-director"
       }
     }
   }
