@@ -31,7 +31,7 @@
     "FD_LOG_MARATHON_API_CALLS": "{{advanced.marathon-log-api-calls}}",
     "FD_CHRONOS_MASTER": "{{service.chronos-master-host}}:{{service.chronos-master-port}}",
     "FD_CHRONOS_MASTER_PROTOCOL": "{{advanced.chronos-master-protocol}}",
-    "FD_KV_SERVER": "{{service.kv-server-host}}:{{service.kv-server-port}}",
+    "FD_KV_SERVER": "{{advanced.etcd-protocol}}://{{service.kv-server-host}}:{{service.kv-server-port}}",
     "FD_KV_USERNAME": "{{advanced.etcd-username}}",
     "FD_KV_PASSWORD": "{{advanced.etcd-password}}"
   },
@@ -52,7 +52,7 @@
   "healthChecks": [
     {
       "path": "/v1/about",
-      "port": {{flight-director.fd-api-server-port}},
+      "portIndex": {{flight-director.fd-api-server-port}},
       "protocol": "HTTP",
       "gracePeriodSeconds": 15,
       "intervalSeconds": 30,

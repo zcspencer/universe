@@ -183,6 +183,11 @@
         "etcd-password": {
           "description": "Password for authenticated etcd API access",
           "type": "string"
+        },
+        "etcd-protocol": {
+          "description": "Selection of HTTP or HTTPS for etcd communication",
+          "type": "string",
+          "default": "http"
         }
       }
     }
