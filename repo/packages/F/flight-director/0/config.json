@@ -119,67 +119,66 @@
       "description": "Advanced configuration parameters for Flight Director service",
       "type": "object",
       "properties": {
-          "dockercfg-location": {
-            "description": ".dockercfg location on Mesos agent nodes",
-            "type": "string",
-            "default": ""
-          },
-          "mesos-master": {
-            "description": "Mesos master URI",
-            "type": "string",
-            "default": "leader.mesos:5050"
-          },
-          "mesos-master-protocol": {
-            "description": "Selection of HTTP or HTTPS for Mesos master communication",
-            "type": "string",
-            "default": "http"
-          },
-          "marathon-master-protocol": {
-            "description": "Selection of HTTP or HTTPS for Marathon master communication",
-            "type": "string",
-            "default": "http"
-          },
-          "allow-marathon-unverified-tls": {
-            "description": "Allow Marathon API calls with invalid SSL configuration",
-            "type": "boolean",
-            "default": false
-          },
-          "marathon-master-host": {
-            "description": "Marathon master host",
-            "type": "string",
-            "default": "marathon.mesos"
-          },
-          "marathon-master-port": {
-            "description": "Marathon port",
-            "type": "integer",
-            "default": 8080
-          },
-          "marathon-user": {
-            "description": "Username for authenticated Marathon API access",
-            "type": "string"
-          },
-          "marathon-password": {
-            "description": "Password for authenticated Marathon API access",
-            "type": "string"
-          },
-          "marathon-log-api-calls": {
-            "description": "Enable or disable verbose logging of Marathon API calls",
-            "type": "boolean",
-            "default": true
-          },
-          "chronos-master-protocol": {
-            "description": "Selection of HTTP or HTTPS for Chronos master communication",
-            "type": "string",
-            "default": "http"
-          },
-          "etcd-username": {
+        "dockercfg-location": {
+          "description": ".dockercfg location on Mesos agent nodes",
+          "type": "string",
+          "default": ""
+        },
+        "mesos-master": {
+          "description": "Mesos master URI",
+          "type": "string",
+          "default": "leader.mesos:5050"
+        },
+        "mesos-master-protocol": {
+          "description": "Selection of HTTP or HTTPS for Mesos master communication",
+          "type": "string",
+          "default": "http"
+        },
+        "marathon-master-protocol": {
+          "description": "Selection of HTTP or HTTPS for Marathon master communication",
+          "type": "string",
+          "default": "http"
+        },
+        "allow-marathon-unverified-tls": {
+          "description": "Allow Marathon API calls with invalid SSL configuration",
+          "type": "boolean",
+          "default": false
+        },
+        "marathon-master-host": {
+          "description": "Marathon master host",
+          "type": "string",
+          "default": "marathon.mesos"
+        },
+        "marathon-master-port": {
+          "description": "Marathon port",
+          "type": "integer",
+          "default": 8080
+        },
+        "marathon-user": {
+          "description": "Username for authenticated Marathon API access",
+          "type": "string"
+        },
+        "marathon-password": {
+          "description": "Password for authenticated Marathon API access",
+          "type": "string"
+        },
+        "marathon-log-api-calls": {
+          "description": "Enable or disable verbose logging of Marathon API calls",
+          "type": "boolean",
+          "default": true
+        },
+        "chronos-master-protocol": {
+          "description": "Selection of HTTP or HTTPS for Chronos master communication",
+          "type": "string",
+          "default": "http"
+        },
+        "etcd-username": {
             "description": "Username for authenticated etcd API access",
             "type": "string"
-          },
-          "etcd-password": {
-            "description": "Password for authenticated etcd API access",
-            "type": "string"
-          }
+        },
+        "etcd-password": {
+          "description": "Password for authenticated etcd API access",
+          "type": "string"
         }
       }
     }
