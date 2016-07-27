@@ -139,16 +139,6 @@
           "type": "string",
           "default": "http"
         },
-        "marathon-master-protocol": {
-          "description": "Selection of HTTP or HTTPS for Marathon master communication",
-          "type": "string",
-          "default": "http"
-        },
-        "allow-marathon-unverified-tls": {
-          "description": "Allow Marathon API calls with invalid SSL configuration",
-          "type": "boolean",
-          "default": false
-        },
         "marathon-master-host": {
           "description": "Marathon master hostname",
           "type": "string",
@@ -158,6 +148,16 @@
           "description": "Marathon service port",
           "type": "integer",
           "default": 8080
+        },
+        "marathon-master-protocol": {
+          "description": "Selection of HTTP or HTTPS for Marathon master communication",
+          "type": "string",
+          "default": "http"
+        },
+        "allow-marathon-unverified-tls": {
+          "description": "Allow Marathon API calls with invalid SSL configuration",
+          "type": "boolean",
+          "default": false
         },
         "marathon-user": {
           "description": "Username for authenticated Marathon API access",
