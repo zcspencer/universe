@@ -15,6 +15,5 @@
   ],
   "version": "0.1",
   "website": "https://github.com/adobe-platform",
-  "selected": true,
-  "minDcosReleaseVersion": "1.7"
+  "selected": true
 }
