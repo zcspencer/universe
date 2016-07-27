@@ -5,13 +5,13 @@
   "instances": 1,
   "acceptedResourceRoles": ["slave_public"],
   "env": {
-    "FD_API_SERVER_PORT": "{{flight-director.fd-api-service-port}}",
+    "FD_API_SERVER_PORT": "{{flight-director.fd-api-server-port}}",
     "FD_DB_ENGINE": "{{flight-director.fd-db-engine}}",
     "FD_DB_PATH": "{{flight-director.fd-db-path}}",
     "FD_DB_DATABASE": "{{flight-director.fd-db-database}}",
     "FD_DB_USERNAME": "{{flight-director.fd-db-username}}",
     "FD_DB_PASSWORD": "{{flight-director.fd-db-password}}",
-    "FD_DRAIN_CONTAINER_TIME": {{flight-director.fd-drain-container-time}},
+    "FD_DRAIN_CONTAINER_TIME": "{{flight-director.fd-drain-container-time}}",
     "FD_EVENT_INTERFACES": "{{flight-director.fd-event-interfaces}}",
     "FD_EVENT_PORT": "{{flight-director.fd-event-port}}",
     "FD_FIXTURES": "{{flight-director.fd-fixtures}}",
@@ -35,14 +35,17 @@
     "FD_KV_USERNAME": "{{advanced.etcd-username}}",
     "FD_KV_PASSWORD": "{{advanced.etcd-password}}"
   },
-  "ports": [{{flight-director.fd-api-service-port}}, {{flight-director.fd-api-service-port}}],
   "container": {
     "type": "DOCKER",
     "docker": {
     "image": "{{resource.assets.container.docker.4fd45e0f4398}}",
-    "network": "HOST"
-    "portMappings:" [
-      { "hostPort": {{flight-director.fd-api-service-port}}, "containerPort": 2001, "protocol": "tcp" }
+    "network": "HOST",
+    "portMappings": [
+      {
+        "hostPort": {{flight-director.fd-api-server-port}},
+        "containerPort": 2001,
+        "protocol": "tcp"
+      }
     ]
     }
   },
