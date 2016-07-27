@@ -18,8 +18,26 @@
         "mem": {
             "description": "Memory (MB) allocation for the Flight Director instance",
             "type": "number",
-            "default": 2048.0,
-            "minimum": 2048.0
+            "default": 1024.0,
+            "minimum": 512.0
+        },
+        "chronos-master-host": {
+          "description": "Chronos master hostname",
+          "type": "string",
+          "default": "chronos.marathon.mesos"
+        },
+        "chronos-master-port": {
+          "description": "Chronos master port",
+          "type": "integer"
+        },
+        "kv-server-host": {
+          "description": "etcd hostname",
+          "type": "string",
+          "default": "etcd.marathon.mesos"
+        },
+        "kv-server-port": {
+          "description": "etcd port",
+          "type": "integer"
         }
       }
     },
@@ -31,20 +49,20 @@
           "type": "integer",
           "default": "2001"
         },
-        "fd-log-marathon-api-calls": {
-          "description": "Enable or disable verbose logging of Marathon API calls",
-          "type": "boolean",
-          "default": true
-        },
+
         "fd-db-engine": {
           "description": "Database engine for Flight Director persistence",
           "type": "string",
           "default": "sqlite3"
         },
         "fd-db-path": {
-          "description": "Flight Director database path",
+          "description": "Flight Director SQLite3 database path",
           "type": "string",
           "default": "./fd.db"
+        },
+        "fd-db-database": {
+          "description": "Flight Director MySQL database name",
+          "type": "string"
         },
         "fd-db-username": {
           "description": "Flight Director MySQL database user",
@@ -54,66 +72,10 @@
           "description": "Flight Director MySQL database password",
           "type": "string"
         },
-        "fd-db-database": {
-          "description": "Flight Director MySQL database name",
-          "type": "string"
-        },
-        "fd-dockercfg-location": {
-          "description": ".dockercfg location on Mesos agent nodes",
-          "type": "string",
-          "default": ""
-        },
         "fd-drain-container-time": {
           "description": "Time (in seconds) to wait before killing old containers",
           "type": "integer",
           "default": 600
-        },
-        "fd-marathon-master-protocol": {
-          "description": "Selection of HTTP or HTTPS for Marathon master communication",
-          "type": "string",
-          "default": "http"
-        },
-        "fd-marathon-master-host": {
-          "description": "Marathon master host",
-          "type": "string",
-          "default": "marathon.mesos"
-        },
-        "fd-marathon-master-port": {
-          "description": "Marathon port",
-          "type": "integer",
-          "default": 8080
-        },
-        "fd-chronos-master-protocol": {
-          "description": "Selection of HTTP or HTTPS for Chronos master communication",
-          "type": "string",
-          "default": "http"
-        },
-        "fd-chronos-master-host": {
-          "description": "Chronos master hostname",
-          "type": "string",
-          "default": "chronos.marathon.mesos"
-        },
-        "fd-chronos-master-port": {
-          "description": "Chronos master port",
-          "type": "integer"
-        },
-        "fd-mesos-master-protocol": {
-          "description": "Selection of HTTP or HTTPS for Mesos master communication",
-          "type": "string",
-          "default": "http"
-        },
-        "fd-mesos-master": {
-          "description": "Mesos master URI",
-          "type": "string",
-          "default": "zk://leader.mesos:2181/mesos"
-        },
-        "fd-marathon-user": {
-          "description": "Username for authenticated Marathon API access",
-          "type": "string"
-        },
-        "fd-marathon-password": {
-          "description": "Password for authenticated Marathon API access",
-          "type": "string"
         },
         "fd-event-interface": {
           "description": "Network interface binding for event listener?",
@@ -121,23 +83,6 @@
         },
         "fd-event-port": {
           "description": "Port binding for event listener?",
-          "type": "string"
-        },
-        "fd-kv-server-host": {
-          "description": "etcd hostname",
-          "type": "string",
-          "default": "etcd.marathon.mesos"
-        },
-        "fd-kv-server-port": {
-          "description": "etcd port",
-          "type": "integer"
-        },
-        "fd-kv-username": {
-          "description": "Username for authenticated etcd API access",
-          "type": "string"
-        },
-        "fd-kv-password": {
-          "description": "Password for authenticated etcd API access",
           "type": "string"
         },
         "fd-fixtures": {
@@ -155,11 +100,6 @@
           "type": "string",
           "default": "none"
         },
-        "fd-allow-marathon-unverified-tls": {
-          "description": "Allow Marathon API calls with invalid SSL configuration",
-          "type": "boolean",
-          "default": false
-        },
         "fd-proxy-port-range": {
           "description": "Port range for auto-assignment of Image proxy port mappings",
           "type": "string",
@@ -176,12 +116,70 @@
       }
     },
     "advanced": {
-      "description": "Advanced configuration parameters for Flight Director",
+      "description": "Advanced configuration parameters for Flight Director service",
       "type": "object",
       "properties": {
-        "docker-image": {
-          "description": "Custom Docker image for Flight Director deployment. Replaces the default jonmeacham/flight-director image.",
-          "type": "string"
+          "dockercfg-location": {
+            "description": ".dockercfg location on Mesos agent nodes",
+            "type": "string",
+            "default": ""
+          },
+          "mesos-master": {
+            "description": "Mesos master URI",
+            "type": "string",
+            "default": "leader.mesos:5050"
+          },
+          "mesos-master-protocol": {
+            "description": "Selection of HTTP or HTTPS for Mesos master communication",
+            "type": "string",
+            "default": "http"
+          },
+          "marathon-master-protocol": {
+            "description": "Selection of HTTP or HTTPS for Marathon master communication",
+            "type": "string",
+            "default": "http"
+          },
+          "allow-marathon-unverified-tls": {
+            "description": "Allow Marathon API calls with invalid SSL configuration",
+            "type": "boolean",
+            "default": false
+          },
+          "marathon-master-host": {
+            "description": "Marathon master host",
+            "type": "string",
+            "default": "marathon.mesos"
+          },
+          "marathon-master-port": {
+            "description": "Marathon port",
+            "type": "integer",
+            "default": 8080
+          },
+          "marathon-user": {
+            "description": "Username for authenticated Marathon API access",
+            "type": "string"
+          },
+          "marathon-password": {
+            "description": "Password for authenticated Marathon API access",
+            "type": "string"
+          },
+          "marathon-log-api-calls": {
+            "description": "Enable or disable verbose logging of Marathon API calls",
+            "type": "boolean",
+            "default": true
+          },
+          "chronos-master-protocol": {
+            "description": "Selection of HTTP or HTTPS for Chronos master communication",
+            "type": "string",
+            "default": "http"
+          },
+          "etcd-username": {
+            "description": "Username for authenticated etcd API access",
+            "type": "string"
+          },
+          "etcd-password": {
+            "description": "Password for authenticated etcd API access",
+            "type": "string"
+          }
         }
       }
     }
