@@ -39,7 +39,7 @@
     "type": "DOCKER",
     "docker": {
     "image": "{{resource.assets.container.docker.4fd45e0f4398}}",
-    "network": "HOST",
+    "network": "BRIDGE",
     "portMappings": [
       {
         "hostPort": {{flight-director.fd-api-server-port}},
@@ -54,10 +54,10 @@
       "path": "/v1/about",
       "port": {{flight-director.fd-api-server-port}},
       "protocol": "HTTP",
-      "gracePeriodSeconds": 15,
-      "intervalSeconds": 30,
-      "timeoutSeconds": 10,
-      "maxConsecutiveFailures": 3
+      "gracePeriodSeconds": 120,
+      "intervalSeconds": 60,
+      "timeoutSeconds": 30,
+      "maxConsecutiveFailures": 5
     }
   ]
 }

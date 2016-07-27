@@ -6,3 +6,5 @@ target/
 .idea/*
 tmp/
 repo/packages/T/tests
+.DS_Store
+*.DS_Store
