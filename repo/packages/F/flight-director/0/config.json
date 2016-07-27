@@ -12,14 +12,14 @@
         "cpus": {
             "description": "CPU allocation for the Flight Director instance",
             "type": "number",
-            "default": 1.0,
+            "default": 0.5,
             "minimum": 0.1
         },
         "mem": {
             "description": "Memory (MB) allocation for the Flight Director instance",
             "type": "number",
-            "default": 1024.0,
-            "minimum": 512.0
+            "default": 256.0,
+            "minimum": 128.0
         },
         "chronos-master-host": {
           "description": "Chronos master hostname",
@@ -47,9 +47,8 @@
         "fd-api-server-port": {
           "description": "Flight Director API listener port",
           "type": "integer",
-          "default": "2001"
+          "default": 2001
         },
-
         "fd-db-engine": {
           "description": "Database engine for Flight Director persistence",
           "type": "string",
@@ -154,7 +153,7 @@
           "type": "string",
           "default": "http"
         },
-        "allow-marathon-unverified-tls": {
+        "marathon-allow-unverified-tls": {
           "description": "Allow Marathon API calls with invalid SSL configuration",
           "type": "boolean",
           "default": false
@@ -187,5 +186,8 @@
         }
       }
     }
-  }
+  },
+  "required": [
+    "service"
+  ]
 }
