@@ -124,10 +124,15 @@
           "type": "string",
           "default": ""
         },
-        "mesos-master": {
-          "description": "Mesos master URI",
+        "mesos-master-host": {
+          "description": "Mesos master hostname",
           "type": "string",
-          "default": "leader.mesos:5050"
+          "default": "leader.mesos"
+        },
+        "mesos-master-port": {
+          "description": "Mesos service port",
+          "type": "integer",
+          "default": 5050
         },
         "mesos-master-protocol": {
           "description": "Selection of HTTP or HTTPS for Mesos master communication",
@@ -145,12 +150,12 @@
           "default": false
         },
         "marathon-master-host": {
-          "description": "Marathon master host",
+          "description": "Marathon master hostname",
           "type": "string",
           "default": "marathon.mesos"
         },
         "marathon-master-port": {
-          "description": "Marathon port",
+          "description": "Marathon service port",
           "type": "integer",
           "default": 8080
         },
