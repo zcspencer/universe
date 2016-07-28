@@ -1,0 +1,14 @@
+{
+  "images": {
+    "icon-small": "https://dcos-private-universe.s3.amazonaws.com/assets/flight-director/icon-service-flight-director-small.png",
+    "icon-medium": "https://dcos-private-universe.s3.amazonaws.com/assets/flight-director/icon-service-flight-director-medium.png",
+    "icon-large": "https://dcos-private-universe.s3.amazonaws.com/assets/flight-director/icon-service-flight-director-large.png"
+  },
+  "assets": {
+    "container": {
+      "docker": {
+        "dc5d56c12af6": "zspencer/capcom"
+      }
+    }
+  }
+}

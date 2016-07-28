@@ -1,0 +1,54 @@
+{
+  "id": "{{service.name}}",
+  "cpus": {{service.cpus}},
+  "mem": {{service.mem}},
+  "instances": 1,
+  "acceptedResourceRoles": ["slave_public"],
+  "env": {
+		"CP_DB_PATH":"{{capcom.cp_db_path}}",
+		"CP_HAPROXY_SOCKET":"{{capcom.cp_haproxy_socket}}",
+		"CP_HEALTHCHECK_INTERVAL":"{{capcom.cp_healthcheck_interval}}",
+		"CP_HOST":"{{capcom.cp_host}}",
+		"CP_IS_CONTAINER":"{{capcom.cp_is_container}}",
+		"CP_KV_STORE_SERVER_ADDRESS":"{{capcom.cp_kv_store_server_address}}",
+		"CP_KV_STORE_USERNAME":"{{capcom.cp_kv_store_username}}",
+		"CP_KV_STORE_PASSWORD":"{{capcom.cp_kv_store_password}}",
+		"CP_KV_TTL":"{{capcom.cp_kv_ttl}}",
+		"CP_PORT":"{{capcom.cp_port}}",
+		"CP_PROXY_GROUP":"{{capcom.cp_proxy_group}}",
+		"CP_PROXY":"{{capcom.cp_proxy}}",
+		"CP_PROXY_DEBUG":"{{capcom.cp_proxy_debug}}",
+		"CP_PROXY_TIMEOUT":"{{capcom.cp_proxy_timeout}}",
+		"CP_PROXY_CONFIG_FILE":"{{capcom.cp_proxy_config_file}}",
+		"CP_PROXY_ENABLED":"{{capcom.cp_proxy_enabled}}",
+		"CP_PROXY_RESTART_SCRIPT":"{{capcom.cp_proxy_restart_script}}",
+		"CP_LOG_LEVEL":"{{capcom.cp_log_level}}",
+		"CP_LOG_LOCATION":"{{capcom.cp_log_location}}",
+		"CP_SSL_CERT_LOCATION":"{{capcom.cp_ssl_cert_location}}",
+  },
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+    "image": "{{resource.assets.container.docker.dc5d56c12af6}}",
+    "network": "BRIDGE",
+    "portMappings": [
+      {
+        "hostPort": {{capcom.cp_port}},
+        "containerPort": {{capcom.cp_port}},
+        "protocol": "tcp"
+      }
+    ]
+    }
+  },
+  "healthChecks": [
+    {
+      "path": "/health-check"",
+      "port": {{capcom.cp_port}},
+      "protocol": "HTTP",
+      "gracePeriodSeconds": 120,
+      "intervalSeconds": 60,
+      "timeoutSeconds": 30,
+      "maxConsecutiveFailures": 5
+    }
+  ]
+}

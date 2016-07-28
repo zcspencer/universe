@@ -1,0 +1,163 @@
+{
+	"properties": {
+		"service": {
+			"description": "Configuration properties for the DC/OS Capcom service",
+			"type": "object",
+			"properties": {
+				"name": {
+					"description": "Display name for the service on the DC/OS dashboard",
+					"type": "string",
+					"default": "capcom"
+				},
+				"cpus": {
+					"description": "CPU allocation for the Capcom instance",
+					"type": "number",
+					"default": 0.5,
+					"minimum": 0.1
+				},
+				"mem": {
+					"description": "Memory (MB) allocation for the Capcom instance",
+					"type": "number",
+					"default": 256.0,
+					"minimum": 128.0
+				},
+				"kv-server-host": {
+					"description": "etcd hostname",
+					"type": "string",
+					"default": "etcd.marathon.mesos"
+				},
+				"kv-server-port": {
+					"description": "etcd port",
+					"type": "integer"
+				}
+			}
+		},
+		"capcom": {
+			"description": "Configuration properties for the Capcom application",
+			"properties": {
+				"cp-db-path": {
+					"description": "Capcom sqllite path",
+					"type": "string",
+					"default": "./capcom.db"
+				},
+				"cp-haproxy-socket": {
+					"description": "Location of HAProxy socket",
+					"type": "string",
+					"default": "/etc/haproxy/haproxysock"
+				},
+				"cp-healthcheck-interval": {
+					"description": "specify server health check interval (consul config string)",
+					"type": "string",
+					"default": "4s"
+				},
+				"cp-host": {
+					"description": "specify server host; defaults to localhost (as opposed to 127.0.0.1)",
+					"type": "string",
+					"default": "127.0.0.1"
+				},
+				"cp_is_container": {
+					"description": "",
+					"type": "string",
+					"default": ""
+				},
+				"cp_kv_store_server_address": {
+					"description": "",
+					"type": "string",
+					"default": ""
+				},
+				"cp_kv_store_username": {
+					"description": "",
+					"type": "string",
+					"default": ""
+				},
+				"cp_kv_store_password": {
+					"description": "",
+					"type": "string",
+					"default": ""
+				},
+				"cp_kv_ttl": {
+					"description": "",
+					"type": "string",
+					"default": ""
+				},
+				"cp_port": {
+					"description": "",
+					"type": "string",
+					"default": ""
+				},
+				"cp_proxy_group": {
+					"description": "",
+					"type": "string",
+					"default": ""
+				},
+				"cp_proxy": {
+					"description": "",
+					"type": "string",
+					"default": ""
+				},
+				"cp_proxy_debug": {
+					"description": "",
+					"type": "string",
+					"default": ""
+				},
+				"cp_proxy_timeout": {
+					"description": "",
+					"type": "string",
+					"default": ""
+				},
+				"cp_proxy_config_file": {
+					"description": "",
+					"type": "string",
+					"default": ""
+				},
+				"cp_proxy_enabled": {
+					"description": "",
+					"type": "string",
+					"default": ""
+				},
+				"cp_proxy_restart_script": {
+					"description": "",
+					"type": "string",
+					"default": ""
+				},
+				"cp_log_level": {
+					"description": "",
+					"type": "string",
+					"default": ""
+				},
+				"cp_log_location": {
+					"description": "",
+					"type": "string",
+					"default": ""
+				},
+				"cp_ssl_cert_location": {
+					"description": "",
+					"type": "string",
+					"default": ""
+				}
+			}
+		},
+		"advanced": {
+			"description": "Advanced configuration parameters for Capcom service",
+			"type": "object",
+			"properties": {
+				"etcd-username": {
+					"description": "Username for authenticated etcd API access",
+					"type": "string"
+				},
+				"etcd-password": {
+					"description": "Password for authenticated etcd API access",
+					"type": "string"
+				},
+				"etcd-protocol": {
+					"description": "Selection of HTTP or HTTPS for etcd communication",
+					"type": "string",
+					"default": "http"
+				}
+			}
+		}
+	},
+	"required": [
+		"service"
+	]
+}

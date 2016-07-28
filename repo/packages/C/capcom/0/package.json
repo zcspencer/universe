@@ -1,0 +1,19 @@
+{
+  "packagingVersion": "3.0",
+  "description": "Ethos platform API for container deployments",
+  "framework": false,
+  "maintainer": "zspencer@adobe.com",
+  "name": "capcom",
+  "postInstallNotes": "Capcom has been installed",
+  "postUninstallNotes": "Capcom has been uninstalled",
+  "scm": "https://github.com/adobe-platform/capcom",
+  "tags": [
+    "ethos",
+    "capcom",
+    "continuous-deployment",
+    "cd"
+  ],
+  "version": "0.1",
+  "website": "https://github.com/adobe-platform",
+  "selected": true
+}
